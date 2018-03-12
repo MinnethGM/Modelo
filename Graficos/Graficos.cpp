@@ -8,6 +8,9 @@
 #include "GL\glew.h"
 #include "GLFW\glfw3.h"
 
+#include "glm\gtx\transform.hpp"
+#include "glm\glm.hpp"
+
 #include <iostream>
 
 #include "Vertice.h"
@@ -38,11 +41,11 @@ void dibujar() {
 void inicializarFigura() {
 	figura = new Modelo();
 	Vertice v1 =
-	{ vec3(-1.0f,0.5f,0.0f), vec4(1.0f,0.0f,1.0f,1.0f) };
+	{ vec4(-1.0f,0.5f,0.0f, 1.0f), vec4(1.0f,0.0f,1.0f,1.0f) };
 	Vertice v2 =
-	{ vec3(0.0f,-0.5f,0.0f), vec4(1.0f,0.0f,1.0f,1.0f) };
+	{ vec4(0.0f,-0.5f,0.0f, 1.0f), vec4(1.0f,0.0f,1.0f,1.0f) };
 	Vertice v3 =
-	{ vec3(1.0f,0.5f,0.0f), vec4(1.0f,0.0f,1.0f,1.0f) };
+	{ vec4(1.0f,0.5f,0.0f, 1.0f), vec4(1.0f,0.0f,1.0f,1.0f) };
 	figura->vertices.push_back(v1);
 	figura->vertices.push_back(v2);
 	figura->vertices.push_back(v3);
@@ -52,13 +55,13 @@ void inicializarCuadrado()
 {
 	cuadrado = new Modelo();
 	Vertice v1 =
-	{ vec3(-0.3f,0.3f,0.0f), vec4(1.0f,0.0f,1.0f,1.0f) };
+	{ vec4(-0.3f,0.3f,0.0f,1.0f), vec4(1.0f,0.0f,1.0f,1.0f) };
 	Vertice v2 =
-	{ vec3(0.3f,0.3f,0.0f), vec4(0.0f,1.0f,1.0f,1.0f) };
+	{ vec4(0.3f,0.3f,0.0f,1.0f), vec4(0.0f,1.0f,1.0f,1.0f) };
 	Vertice v3 =
-	{ vec3(0.3f,-0.3f,0.0f), vec4(1.0f,1.0f,0.0f,1.0f) };
+	{ vec4(0.3f,-0.3f,0.0f,1.0f), vec4(1.0f,1.0f,0.0f,1.0f) };
 	Vertice v4 =
-	{ vec3(-0.3f,-0.3f,0.0f), vec4(1.0f,1.0f,1.0f,1.0f) };
+	{ vec4(-0.3f,-0.3f,0.0f,1.0f), vec4(1.0f,1.0f,1.0f,1.0f) };
 	cuadrado->vertices.push_back(v1);
 	cuadrado->vertices.push_back(v2);
 	cuadrado->vertices.push_back(v3);
